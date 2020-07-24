@@ -26,8 +26,8 @@ intToStr = Number(intToStr);
 console.log(intToStr + " is a " + typeof intToStr);
 
 //Task d: Write a function to multiply a*b
-function multiplyNum(a, b) {
-  const multiplyNumbers = a * b;
+function multiplyNum(num1, num2) {
+  const multiplyNumbers = num1 * num2;
 
   return multiplyNumbers;
 }
@@ -37,6 +37,15 @@ console.log("Multiply function result: " + multiplyNum(2, 3));
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years
+const myAge = 30;
+
+function dogYears(humanAge) {
+  let dogAge = humanAge * 7;
+
+  return dogAge;
+}
+
+console.log("My age of " + myAge + " is " + dogYears(myAge) + " in dog years, WOW!");
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder
@@ -54,7 +63,34 @@ console.log("Multiply function result: " + multiplyNum(2, 3));
 // 4 - 7 months 5% of their body weight
 // 7 - 12 months 4% of their body weight
 
+function dogFeeder(dogWeight, dogAge) {
+  let rawFoodLbs;
+
+  if (dogAge < 1) {
+    if (dogAge >= 0.17 && dogAge <= 0.33) {
+      rawFoodLbs = dogWeight * 0.1;
+    } else if (dogAge > 0.33 && dogAge <= 0.58) {
+      rawFoodLbs = dogWeight * 0.05;
+    } else if (dogAge > 0.58 && dogAge < 1) {
+      rawFoodLbs = dogWeight * 0.04;
+    }
+  } else {
+    if (dogWeight <= 5) {
+      rawFoodLbs = dogWeight * 0.05;
+    } else if (dogWeight >= 6 && dogWeight <= 10) {
+      rawFoodLbs = dogWeight * 0.04;
+    } else if (dogWeight >= 11 && dogWeight <= 15) {
+      rawFoodLbs = dogWeight * 0.03;
+    } else if (dogWeight >= 15) {
+      rawFoodLbs = dogWeight * 0.02;
+    }
+  }
+
+  return rawFoodLbs;
+}
+
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
+console.log("The amount of food(in lbs) for dog whose age is 1 and 15lbs is " + dogFeeder(15, 1));
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
