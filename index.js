@@ -111,6 +111,7 @@ function rockPaper(userInput) {
   // Random generate a number from 1-3
   const cpuChoice = Math.floor(Math.random() * 3) + 1;
   let cpuInput;
+
   if (cpuChoice === 1) {
     cpuInput = "Rock";
   } else if (cpuChoice === 2) {
@@ -247,7 +248,84 @@ console.log("The letter grade of " + myGrade + " is " + convertGrade(myGrade));
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
+const testWord = "Javo";
+
+function numOfVowels(string) {
+  // Get an array with the vowels
+  const vowelArr = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+  // Declare variable for number of Vowels;
+  let vowelsAmount = 0;
+
+  // Loop the vowels array
+  for (let i = 0; i < vowelArr.length; i++) {
+    if (string.includes(vowelArr[i])) {
+      vowelsAmount++;
+    }
+  }
+
+  // Return the output
+  return vowelsAmount;
+}
+
+console.log("The word " + testWord + " has " + numOfVowels(testWord) + " vowels.");
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+function rockPaperEX() {
+  // Declare the outcome veriable
+  let myOutcome;
+
+  // Random generate a number from 1-3
+  const cpuChoice = Math.floor(Math.random() * 3) + 1;
+  let cpuInput;
+  if (cpuChoice === 1) {
+    cpuInput = "Rock";
+  } else if (cpuChoice === 2) {
+    cpuInput = "Paper";
+  } else if (cpuChoice === 3) {
+    cpuInput = "Scissor";
+  }
+
+  // Change the userInput to be a number instead of string
+  let userChoice;
+  const userPrompt = prompt("Let's play! Type Rock, Paper, or Scissors. Enter your choice below", "Rock");
+
+  if (userPrompt == "Rock") {
+    userChoice = 1;
+  } else if (userPrompt == "Paper") {
+    userChoice = 2;
+  } else if (userPrompt == "Scissor") {
+    userChoice = 3;
+  } else {
+    userChoice = 0;
+  }
+
+  // Start the game
+  myOutcome = "You chose " + userPrompt + " and CPU chose " + cpuInput;
+
+  if (userChoice === 0) {
+    myOutcome += " - Wrong Input! Please Use Rock, Paper, or Scissors";
+  } else if (userChoice === 1 && cpuChoice === 2) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === 2 && cpuChoice === 3) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === 3 && cpuChoice === 1) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === cpuChoice) {
+    myOutcome += " - Draw!";
+  } else {
+    myOutcome += " - You Won!";
+  }
+
+  // Bring results and ask if play again
+  const results = confirm(myOutcome + ". Play Again?");
+
+  // Restart the function if pressed ok
+  if (results === true) {
+    rockPaperEX();
+  }
+}
+
+rockPaperEX();
