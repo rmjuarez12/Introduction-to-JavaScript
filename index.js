@@ -183,6 +183,32 @@ console.log("There is " + ftToCm(ftToConvert) + "cms in " + ftToConvert + "ft");
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
+function annoyingSong(repeatNum) {
+  // Declare the variable with the output
+  let output;
+
+  // Declare a variable for how many sodas are left
+  let sodasLeft = repeatNum - 1;
+
+  for (let i = 1; i < repeatNum + 1; i++) {
+    // Start the annoying song
+    output =
+      i +
+      " bottles of soda on the wall, " +
+      i +
+      " bottles of soda, take one down pass it around " +
+      sodasLeft +
+      " bottles of soda on the wall";
+
+    // console.log the song
+    console.log(output);
+
+    // Subtract 1 at the end of every iteration
+    sodasLeft--;
+  }
+}
+
+annoyingSong(5);
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -192,6 +218,30 @@ console.log("There is " + ftToCm(ftToConvert) + "cms in " + ftToConvert + "ft");
 //70s should be Cs
 //60s should be D
 //and anything below 60 should be F
+const myGrade = 80;
+
+function convertGrade(grade) {
+  // Declare the output variable
+  let letterGrade;
+
+  // Depending on the range of the grade, choose the appropriate letter grade
+  if (grade >= 90 && grade <= 100) {
+    letterGrade = "A";
+  } else if (grade >= 80 && grade < 90) {
+    letterGrade = "B";
+  } else if (grade >= 70 && grade < 80) {
+    letterGrade = "C";
+  } else if (grade >= 60 && grade < 70) {
+    letterGrade = "D";
+  } else if (grade < 60) {
+    letterGrade = "F";
+  }
+
+  // Return the output
+  return letterGrade;
+}
+
+console.log("The letter grade of " + myGrade + " is " + convertGrade(myGrade));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
