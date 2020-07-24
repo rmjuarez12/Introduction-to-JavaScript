@@ -27,8 +27,10 @@ console.log(intToStr + " is a " + typeof intToStr);
 
 //Task d: Write a function to multiply a*b
 function multiplyNum(num1, num2) {
+  // Declare the variable to multiply nums
   const multiplyNumbers = num1 * num2;
 
+  // Return the result of the multiplication
   return multiplyNumbers;
 }
 
@@ -40,8 +42,10 @@ console.log("Multiply function result: " + multiplyNum(2, 3));
 const myAge = 30;
 
 function dogYears(humanAge) {
+  // Declare the dogAge variable
   let dogAge = humanAge * 7;
 
+  // Return the Dog's Age
   return dogAge;
 }
 
@@ -90,20 +94,90 @@ function dogFeeder(dogWeight, dogAge) {
 }
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-console.log("The amount of food(in lbs) for dog whose age is 1 and 15lbs is " + dogFeeder(15, 1));
+console.log("The amount of food(in lbs) for dog whose age is 1yr and 15lbs is " + dogFeeder(15, 1));
+console.log("The amount of food(in lbs) for puppy whose age is 2mon and 3lbs is " + dogFeeder(3, 0.17));
 
 /************************************************************** Task 4 **************************************************************/
-// Rock, Paper, Sissors
-// Your function should take a string (either rock paper or sissors)
+// Rock, Paper, Scissors
+// Your function should take a string (either rock paper or scissors)
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
 
+function rockPaper(userInput) {
+  // Declare the outcome veriable
+  let myOutcome;
+
+  // Random generate a number from 1-3
+  const cpuChoice = Math.floor(Math.random() * 3) + 1;
+  let cpuInput;
+  if (cpuChoice === 1) {
+    cpuInput = "Rock";
+  } else if (cpuChoice === 2) {
+    cpuInput = "Paper";
+  } else if (cpuChoice === 3) {
+    cpuInput = "Scissor";
+  }
+
+  // Change the userInput to be a number instead of string
+  let userChoice;
+
+  if (userInput === "Rock") {
+    userChoice = 1;
+  } else if (userInput === "Paper") {
+    userChoice = 2;
+  } else if (userInput === "Scissor") {
+    userChoice = 3;
+  }
+
+  // Start the game
+  myOutcome = "You chose " + userInput + " and CPU chose " + cpuInput;
+
+  if (userChoice === 1 && cpuChoice === 2) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === 2 && cpuChoice === 3) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === 3 && cpuChoice === 1) {
+    myOutcome += " - You lose!";
+  } else if (userChoice === cpuChoice) {
+    myOutcome += " - Draw!";
+  } else {
+    myOutcome += " - You Won!";
+  }
+
+  // Return the Outcome
+  return myOutcome;
+}
+
+console.log(rockPaper("Rock"));
+
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+const kmToConvert = 4;
+
+function kmToMiles(km) {
+  // declare the variable for the equation
+  let convertToMiles = km / 1.609;
+
+  // Return the equation results
+  return convertToMiles;
+}
+
+console.log("There is " + kmToMiles(kmToConvert) + " Miles in " + kmToConvert + "kms");
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+const ftToConvert = 3;
+
+function ftToCm(ft) {
+  // declare the variable for the equation
+  let convertToCm = ft * 30.48;
+
+  // Return the equation results
+  return convertToCm;
+}
+
+console.log("There is " + ftToCm(ftToConvert) + "cms in " + ftToConvert + "ft");
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
