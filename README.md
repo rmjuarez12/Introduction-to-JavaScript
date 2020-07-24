@@ -27,10 +27,10 @@ Exercises are outlined in the `index.js` file, please read the instructions care
 
 Using VSCode and Command Line:
 
-[x] Fork repo and add TL as collaborator on Github.
-[x] Clone your fork (not Lambda's repo by mistake!).
-[x] `cd` into your newly cloned repository.
-[x] Create a new branch by typing `git checkout -b <firstName-lastName>`.
+- [x] Fork repo and add TL as collaborator on Github.
+- [x] Clone your fork (not Lambda's repo by mistake!).
+- [x] `cd` into your newly cloned repository.
+- [x] Create a new branch by typing `git checkout -b <firstName-lastName>`.
 
 ### Task 2: Complete MVP Requirements
 
