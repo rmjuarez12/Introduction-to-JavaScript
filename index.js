@@ -289,21 +289,22 @@ function rockPaperEX() {
   }
 
   // Change the userInput to be a number instead of string
+  const userInput = document.getElementById("my-form").elements;
+  const userInputVal = userInput["userInput"].value;
   let userChoice;
-  const userPrompt = prompt("Let's play! Type Rock, Paper, or Scissors. Enter your choice below", "Rock");
 
-  if (userPrompt == "Rock") {
+  if (userInputVal == "Rock") {
     userChoice = 1;
-  } else if (userPrompt == "Paper") {
+  } else if (userInputVal == "Paper") {
     userChoice = 2;
-  } else if (userPrompt == "Scissor") {
+  } else if (userInputVal == "Scissors") {
     userChoice = 3;
   } else {
     userChoice = 0;
   }
 
   // Start the game
-  myOutcome = "You chose " + userPrompt + " and CPU chose " + cpuInput;
+  myOutcome = "You chose " + userInputVal + " and CPU chose " + cpuInput;
 
   if (userChoice === 0) {
     myOutcome += " - Wrong Input! Please Use Rock, Paper, or Scissors";
@@ -320,10 +321,5 @@ function rockPaperEX() {
   }
 
   // Bring results and ask if play again
-  const results = confirm(myOutcome + ". Play Again?");
-
-  // Restart the function if pressed ok
-  if (results === true) {
-    rockPaperEX();
-  }
+  const results = alert(myOutcome);
 }

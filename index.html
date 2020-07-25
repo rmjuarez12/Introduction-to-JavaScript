@@ -9,7 +9,23 @@
 
 <body>
     <script src="index.js"></script>
-    <button onclick="rockPaperEX()">Play Rock, Paper, Scissors</button>
+    <form id="my-form">
+        <h1>Play Rock, Paper Scissors</h1>
+
+        <p>
+            <label for="rock"><input type="radio" name="userInput" value="Rock" id="rock" /> Rock</label>
+        </p>
+        <p>
+            <label for="paper"><input type="radio" name="userInput" value="Paper" id="paper" /> Paper</label>
+        </p>
+        <p>
+            <label for="scissors"><input type="radio" name="userInput" value="Scissors" id="scissors" />
+                Scissors</label>
+        </p>
+
+        <input type="submit" onclick="event.preventDefault(); rockPaperEX();" />
+    </form>
+
 </body>
 
 </html>
