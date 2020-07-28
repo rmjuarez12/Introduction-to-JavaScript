@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Intro To JavaScript</title>
 </head>
+
 <body>
     <script src="index.js"></script>
+    <form id="my-form">
+        <h1>Play Rock, Paper Scissors</h1>
+
+        <p>
+            <label for="rock"><input type="radio" name="userInput" value="Rock" id="rock" /> Rock</label>
+        </p>
+        <p>
+            <label for="paper"><input type="radio" name="userInput" value="Paper" id="paper" /> Paper</label>
+        </p>
+        <p>
+            <label for="scissors"><input type="radio" name="userInput" value="Scissors" id="scissors" />
+                Scissors</label>
+        </p>
+
+        <input type="submit" onclick="event.preventDefault(); rockPaperEX();" />
+    </form>
+
 </body>
+
 </html>
